@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestor de Contraseñas</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Contraseñas</title>
+    <script src="index.js" defer></script>
 </head>
 <body>
-  <main>
-    <ul>
-      <li><a href="categories.html">Gestor de Categorías</a></li>
-      <li><a href="sites.html">Gestor de Sitios</a></li>
-    </ul>
-  </main>
-  <script>
-    let drawData = (data) => {
-      data.forEach(category => {
-        let parent = document.getElementsByTagName('ul')[0]
-        let child = document.createElement('li')
-        // child.innerText = JSON.stringify(category)
-        child.innerText = category.name
-        parent.appendChild(child)
-      })
-    }
-
-    fetch("http://localhost:3000/categories")
-      .then(res => res.json())
-      .then(data => drawData(data))
-  </script>
+    <main>
+        <h1>Gestor de Contraseñas</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="add-category-link">Añadir Categoría</a></li>
+                <li><a href="nuevo_sitio.html" id="add-site-link">Añadir Sitio</a></li>
+            </ul>
+        </nav>
+        <section id="category-section">
+            <h2>Categorías</h2>
+            <ul id="category-list"></ul>
+        </section>
+        <section id="site-section" style="display: none;">
+            <h2>Sitios</h2>
+            <ul id="site-list"></ul>
+        </section>
+        <form id="add-category-form" style="display: none;">
+            <input type="text" id="category-name" placeholder="Nombre de la categoría" required>
+            <button type="submit">Añadir Categoría</button>
+        </form>
+    </main>
 </body>
 </html>
