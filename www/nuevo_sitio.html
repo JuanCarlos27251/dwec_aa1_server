@@ -1,19 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Añadir Nuevo Sitio</title>
-    <script src="nuevo_sitio.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Contraseñas - Añadir Sitio</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Añadir Nuevo Sitio</h1>
-    <form id="add-site-form">
-        <input type="text" id="site-name" placeholder="Nombre del sitio" required>
-        <input type="text" id="site-url" placeholder="URL" required>
-        <input type="text" id="site-user" placeholder="Usuario" required>
-        <input type="password" id="site-password" placeholder="Contraseña" required>
-        <input type="text" id="site-description" placeholder="Descripción" required>
-        <button type="submit">Añadir Sitio</button>
-    </form>
+  <div class="container">
+    <header class="my-4">
+      <h1 class="text-center">Añadir Nuevo Sitio</h1>
+    </header>
+    <main>
+      <form id="add-site-form">
+        <div class="form-group">
+          <label for="site-name">Nombre del Sitio:</label>
+          <input type="text" id="site-name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="site-url">URL:</label>
+          <input type="text" id="site-url" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="site-user">Usuario:</label>
+          <input type="text" id="site-user" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="site-password">Contraseña:</label>
+          <input type="password" id="site-password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="site-description">Descripción:</label>
+          <input type="text" id="site-description" class="form-control" required>
+        </div>
+        <input type="hidden" id="category-id">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </main>
+    <footer class="text-center mt-4">
+      <p>&copy; 2025 Gestor de Contraseñas</p>
+    </footer>
+    <script src="nuevo_sitio.js"></script>
+  </div>
 </body>
 </html>

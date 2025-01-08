@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Contraseñas</title>
-    <script src="index.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Contraseñas - Categorías</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+    <header class="my-4">
+      <h1 class="text-center">Gestor de Contraseñas</h1>
+    </header>
     <main>
-        <h1>Gestor de Contraseñas</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="add-category-link">Añadir Categoría</a></li>
-                <li><a href="nuevo_sitio.html" id="add-site-link">Añadir Sitio</a></li>
-            </ul>
-        </nav>
-        <section id="category-section">
-            <h2>Categorías</h2>
-            <ul id="category-list"></ul>
-        </section>
-        <section id="site-section" style="display: none;">
-            <h2>Sitios</h2>
-            <ul id="site-list"></ul>
-        </section>
+      <section id="category-section">
+        <h2>Categorías</h2>
+        <ul id="category-list" class="list-group"></ul>
+        <button id="add-category-link" class="btn btn-primary mt-3">Añadir Categoría</button>
         <form id="add-category-form" style="display: none;">
-            <input type="text" id="category-name" placeholder="Nombre de la categoría" required>
-            <button type="submit">Añadir Categoría</button>
+          <div class="form-group">
+            <label for="category-name">Nombre de la Categoría:</label>
+            <input type="text" id="category-name" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
+      </section>
+      <section id="site-section" style="display: none;">
+        <h2>Sitios</h2>
+        <ul id="site-list" class="list-group"></ul>
+        <button id="add-site-link" class="btn btn-primary mt-3" onclick="navigateToAddSite()">Añadir Sitio</button>
+      </section>
     </main>
+    <footer class="text-center mt-4">
+      <p>&copy; 2025 Gestor de Contraseñas</p>
+    </footer>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
