@@ -1,33 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Contraseñas</title>
-    <script src="index.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Contraseñas - Categorías</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-category {
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card-category:hover {
+      transform: scale(1.03);
+    }
+    .category-actions button {
+      margin-left: 5px;
+    }
+    .main-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .category-title {
+      font-size: 1.5rem;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-light">
+  <div class="container shadow bg-white rounded py-4 px-5 mt-5">
+    <header class="mb-5">
+      <h1 class="text-center main-title">
+        <a href="/" style="text-decoration: none; color: inherit;">Gestor de Contraseñas</a>
+      </h1>
+    </header>
     <main>
-        <h1>Gestor de Contraseñas</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="add-category-link">Añadir Categoría</a></li>
-                <li><a href="nuevo_sitio.html" id="add-site-link">Añadir Sitio</a></li>
-            </ul>
-        </nav>
-        <section id="category-section">
-            <h2>Categorías</h2>
-            <ul id="category-list"></ul>
-        </section>
-        <section id="site-section" style="display: none;">
-            <h2>Sitios</h2>
-            <ul id="site-list"></ul>
-        </section>
-        <form id="add-category-form" style="display: none;">
-            <input type="text" id="category-name" placeholder="Nombre de la categoría" required>
-            <button type="submit">Añadir Categoría</button>
+      <!-- Categorías -->
+      <section id="category-section" class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h4 text-secondary category-title">Categorías</h2>
+          <button id="add-category-link" class="btn btn-primary">Añadir Categoría</button>
+        </div>
+        <div id="category-list" class="row"></div>
+        <form id="add-category-form" style="display: none;" class="p-4 border rounded bg-light">
+          <div class="form-group">
+            <label for="category-name" class="font-weight-bold">Nombre de la Categoría:</label>
+            <input type="text" id="category-name" class="form-control" placeholder="Introduce el nombre" required>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-success">Guardar</button>
+          </div>
         </form>
+      </section>
+
+      <!-- Sitios -->
+      <section id="site-section" style="display: none;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h4 text-secondary">Sitios</h2>
+          <button id="add-site-link" class="btn btn-primary">Añadir Sitio</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre del Sitio</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="site-list"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
+    <footer class="text-center mt-5">
+      <p class="text-muted">&copy; 2025 Gestor de Contraseñas</p>
+    </footer>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
